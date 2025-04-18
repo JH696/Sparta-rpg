@@ -320,8 +320,6 @@ namespace Sparta_rpg
                             {
                                 inventory[6] = "[E] " + inventory[6];
 
-                                inventory[6] = inventory[6].Replace("    ??   ", "타락 + 99");
-
                                 atk += 20;
                                 level += 665;
 
@@ -330,14 +328,6 @@ namespace Sparta_rpg
                                 Console.ReadKey();
                             }
                             else  // 장착 해제
-                            {
-                                inventory[6] = inventory[6].Replace("[E] ", "");
-                                atk -= 20;
-                                level -= 665;
-                                Console.WriteLine("아이템을 장착 해제했습니다.");
-                                Console.WriteLine("아무 키나 누르세요.");
-                                Console.ReadKey();
-                            }
                             {
                                 Console.WriteLine("검을 놓을 수 없습니다.");
                                 Console.WriteLine("아무 키나 누르세요.");
@@ -410,7 +400,7 @@ namespace Sparta_rpg
                     player.gold += 76277;
                 }
 
-                Console.WriteLine("\n1.상태 보기\n2.인벤토리\n3.상점\n4.던전");
+                Console.WriteLine("\n1.상태 보기\n2.인벤토리\n3.상점");
                 Console.Write("\n원하시는 행동을 입력해주세요.\n\n>> ");
 
                 string input = Console.ReadLine();
@@ -659,7 +649,7 @@ namespace Sparta_rpg
                         {
                             if (player.inventory[6] == "")
                             {
-                                player.inventory[6] = "불길한 검      |     ??     | 검이 나를 쳐다보는 것만 같다.";
+                                player.inventory[6] = "불길한 검      |     ??     | 이쪽을 쳐다보는 것만 같습니다.";
                                 items[6] = items[6].Replace("10000G", "구매완료");
                                 player.gold -= 10000;
                                 Console.WriteLine("구매의 성공했습니다.");

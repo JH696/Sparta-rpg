@@ -318,7 +318,7 @@ namespace Sparta_rpg
                     case "7":  // 7번 아이템 장착
                         if (inventory[6] != "")
                         {
-                            if (inventory[6] == "불길한 검      |     ??     | 검이 나를 쳐다보는 것만 같다.")
+                            if (inventory[6] == "불길한 검      |     ??     | 나를 쳐다보는 것만 같다.")
                             {
                                 inventory[6] = "[E] " + inventory[6];
 

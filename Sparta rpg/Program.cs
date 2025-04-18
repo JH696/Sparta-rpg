@@ -40,7 +40,7 @@ namespace Sparta_rpg
         public void ShowStatus()  // 스탯창
         {
             Console.Clear();
-            bool status = true ;
+            bool status = true;
 
             while (status)
             {
@@ -56,7 +56,7 @@ namespace Sparta_rpg
 
                 switch (input1)
                 {
-                    case "0":
+                    case "0":  // 나가기
                         status = false;
                         break;
 
@@ -72,9 +72,9 @@ namespace Sparta_rpg
 
         public void ShowInventory()  // 인벤토리 표시
         {
-            bool  myInventory = true;
+            bool enterInventory = true;
 
-            while (myInventory)
+            while (enterInventory)  // 인벤토리 (아이템 목록)
             {
                 Console.Clear();
                 Console.WriteLine("인벤토리\n보유 중인 아이템을 관리할 수 있습니다.\n\n[아이템 목록]");
@@ -90,7 +90,7 @@ namespace Sparta_rpg
                 switch (input1)
                 {
                     case "0":
-                        myInventory = false;
+                        enterInventory = false;
                         break;
 
                     case "1":
@@ -108,9 +108,9 @@ namespace Sparta_rpg
 
         public void Equip() // 장착 관리
         {
-            bool equipSetting = true;
+            bool enterEquip = true;
 
-            while (equipSetting)
+            while (enterEquip)
             {
                 Console.Clear();
                 Console.WriteLine("인벤토리 - 장착 관리\n보유 중인 아이템을 관리할 수 있습니다.\n\n[아이템 목록]");
@@ -126,10 +126,10 @@ namespace Sparta_rpg
                 switch (input1)
                 {
                     case "0":
-                        equipSetting = false;
+                        enterEquip = false;
                         break;
 
-                    case "1":
+                    case "1":  // 1번 아이템 장착
                         if (inventory[0] != "")
                         {
                             if (inventory[0] == "녹슨 갑옷      | 방어력 +5  | 부식돼 부스러기가 떨어집니다.")
@@ -141,7 +141,7 @@ namespace Sparta_rpg
                                 Console.WriteLine("아무 키나 누르세요.");
                                 Console.ReadKey();
                             }
-                            else
+                            else  // 장착 해제
                             {
                                 inventory[0] = inventory[0].Replace("[E] ", "");
                                 amr -= 5;
@@ -151,16 +151,16 @@ namespace Sparta_rpg
                                 Console.ReadKey();
                             }
                         }
-                        else
+                        else  // 비어있음
                         {
                             Console.WriteLine("장착할 아이템이 없습니다.");
                             Console.WriteLine("아무 키나 누르세요.");
                             Console.ReadKey();
                             Console.Clear();
                         }
-                            break;
+                        break;
 
-                    case "2":
+                    case "2":  // 2번 아이템 장착
                         if (inventory[1] != "")
                         {
                             if (inventory[1] == "멀쩡한 갑옷    | 방어력 +9  | 보호 받는 기분을 느낍니다.")
@@ -172,7 +172,7 @@ namespace Sparta_rpg
                                 Console.WriteLine("아무 키나 누르세요.");
                                 Console.ReadKey();
                             }
-                            else
+                            else  // 장착 해제
                             {
                                 inventory[1] = inventory[1].Replace("[E] ", "");
                                 amr -= 9;
@@ -182,7 +182,7 @@ namespace Sparta_rpg
                                 Console.ReadKey();
                             }
                         }
-                        else
+                        else  // 비어있음
                         {
                             Console.WriteLine("장착할 아이템이 없습니다.");
                             Console.WriteLine("아무 키나 누르세요.");
@@ -191,7 +191,7 @@ namespace Sparta_rpg
                         }
                         break;
 
-                    case "3":
+                    case "3":  // 3번 아이템 장착
                         if (inventory[2] != "")
                         {
                             if (inventory[2] == "광이 나는 갑옷 | 방어력 +15 | 거울 대용으로 쓸 수 있습니다.")
@@ -203,7 +203,7 @@ namespace Sparta_rpg
                                 Console.WriteLine("아무 키나 누르세요.");
                                 Console.ReadKey();
                             }
-                            else
+                            else  // 장착 해제
                             {
                                 inventory[2] = inventory[2].Replace("[E] ", "");
                                 amr -= 15;
@@ -213,7 +213,7 @@ namespace Sparta_rpg
                                 Console.ReadKey();
                             }
                         }
-                        else
+                        else // 비어있음
                         {
                             Console.WriteLine("장착할 아이템이 없습니다.");
                             Console.WriteLine("아무 키나 누르세요.");
@@ -222,7 +222,7 @@ namespace Sparta_rpg
                         }
                         break;
 
-                    case "4":
+                    case "4":  // 4번 아이템 장착
                         if (inventory[3] != "")
                         {
                             if (inventory[3] == "녹슨 검        | 공격력 +2  | 파상풍으로 죽을 겁니다.")
@@ -234,7 +234,7 @@ namespace Sparta_rpg
                                 Console.WriteLine("아무 키나 누르세요.");
                                 Console.ReadKey();
                             }
-                            else
+                            else  // 장착 해제
                             {
                                 inventory[3] = inventory[3].Replace("[E] ", "");
                                 atk -= 2;
@@ -244,7 +244,7 @@ namespace Sparta_rpg
                                 Console.ReadKey();
                             }
                         }
-                        else
+                        else  // 비어있음
                         {
                             Console.WriteLine("장착할 아이템이 없습니다.");
                             Console.WriteLine("아무 키나 누르세요.");
@@ -253,7 +253,7 @@ namespace Sparta_rpg
                         }
                         break;
 
-                    case "5":
+                    case "5":  // 5번 아이템 장착
                         if (inventory[4] != "")
                         {
                             if (inventory[4] == "멀쩡한 검      | 공격력 +5  | 자신감을 불어 넣어줍니다.")
@@ -265,7 +265,7 @@ namespace Sparta_rpg
                                 Console.WriteLine("아무 키나 누르세요.");
                                 Console.ReadKey();
                             }
-                            else
+                            else  // 장착 해제
                             {
                                 inventory[4] = inventory[4].Replace("[E] ", "");
                                 atk -= 5;
@@ -275,7 +275,7 @@ namespace Sparta_rpg
                                 Console.ReadKey();
                             }
                         }
-                        else
+                        else  // 비어있음
                         {
                             Console.WriteLine("장착할 아이템이 없습니다.");
                             Console.WriteLine("아무 키나 누르세요.");
@@ -284,7 +284,7 @@ namespace Sparta_rpg
                         }
                         break;
 
-                    case "6":
+                    case "6":  // 6번 아이템 장착
                         if (inventory[5] != "")
                         {
                             if (inventory[5] == "광이 나는 검   | 공격력 +7  | 적의 눈을 멀게 합니다.")
@@ -296,7 +296,7 @@ namespace Sparta_rpg
                                 Console.WriteLine("아무 키나 누르세요.");
                                 Console.ReadKey();
                             }
-                            else
+                            else  // 장착 해제
                             {
                                 inventory[5] = inventory[5].Replace("[E] ", "");
                                 atk -= 7;
@@ -306,7 +306,7 @@ namespace Sparta_rpg
                                 Console.ReadKey();
                             }
                         }
-                        else
+                        else  // 비어있음
                         {
                             Console.WriteLine("장착할 아이템이 없습니다.");
                             Console.WriteLine("아무 키나 누르세요.");
@@ -315,7 +315,7 @@ namespace Sparta_rpg
                         }
                         break;
 
-                    case "7":
+                    case "7":  // 7번 아이템 장착
                         if (inventory[6] != "")
                         {
                             if (inventory[6] == "불길한 검      |     ??     | 검이 나를 쳐다보는 것만 같다.")
@@ -331,14 +331,22 @@ namespace Sparta_rpg
                                 Console.WriteLine("아무 키나 누르세요.");
                                 Console.ReadKey();
                             }
-                            else
+                            else  // 장착 해제
+                            {
+                                inventory[6] = inventory[6].Replace("[E] ", "");
+                                atk -= 20;
+                                level -= 665;
+                                Console.WriteLine("아이템을 장착 해제했습니다.");
+                                Console.WriteLine("아무 키나 누르세요.");
+                                Console.ReadKey();
+                            }
                             {
                                 Console.WriteLine("검을 놓을 수 없습니다.");
                                 Console.WriteLine("아무 키나 누르세요.");
                                 Console.ReadKey();
                             }
                         }
-                        else
+                        else  // 비어있음
                         {
                             Console.WriteLine("장착할 아이템이 없습니다.");
                             Console.WriteLine("아무 키나 누르세요.");
@@ -394,7 +402,7 @@ namespace Sparta_rpg
 
             bool town = true;
 
-            while (town)  // 마을
+            while (town)  // 마을 (로비)
             {
                 Console.Clear();
                 Console.WriteLine($"스파르타 마을 오신 것을 환영합니다 {player.name}.\n이곳에서 던전으로 들어가기 전 활동을 할 수 있습니다.");
@@ -404,7 +412,7 @@ namespace Sparta_rpg
                     player.gold += 76277;
                 }
 
-                Console.WriteLine("\n1.상태 보기\n2.인벤토리\n3.상점");
+                Console.WriteLine("\n1.상태 보기\n2.인벤토리\n3.상점\n4.던전");
                 Console.Write("\n원하시는 행동을 입력해주세요.\n\n>> ");
 
                 string input = Console.ReadLine();
@@ -419,7 +427,7 @@ namespace Sparta_rpg
                         player.ShowInventory();
                         break;
 
-                    case "3":  // 상점 이동
+                    case "3":  // 상점
                         Shoping1();
                         break;
 
@@ -459,7 +467,7 @@ namespace Sparta_rpg
                         Shoping2();
                         break;
 
-                    case "0":  // 타운 이동
+                    case "0":  // 타운 (로비)
                         shop = false;
                         Console.Clear();
                         break;
@@ -498,7 +506,7 @@ namespace Sparta_rpg
 
                 switch (input)
                 {
-                    case "0":  // 돌아가기
+                    case "0":  // 나가기
                         shoping = false;
                         Console.Clear();
                         break;
@@ -514,7 +522,7 @@ namespace Sparta_rpg
                                 player.gold -= 500;
                                 Console.WriteLine("구매의 성공했습니다.");
                             }
-                            else  // 보유 중이라면
+                            else  // 보유 중
                             {
                                 Console.WriteLine("이미 보유한 아이템입니다.");
                             }
@@ -538,7 +546,7 @@ namespace Sparta_rpg
                                 player.gold -= 1000;
                                 Console.WriteLine("구매의 성공했습니다.");
                             }
-                            else  // 보유 중이라면
+                            else  // 보유 중
                             {
                                 Console.WriteLine("이미 보유한 아이템입니다.");
                             }
@@ -562,7 +570,7 @@ namespace Sparta_rpg
                                 player.gold -= 3000;
                                 Console.WriteLine("구매의 성공했습니다.");
                             }
-                            else  // 보유 중이라면
+                            else  // 보유 중
                             {
                                 Console.WriteLine("이미 보유한 아이템입니다.");
                             }
@@ -586,7 +594,7 @@ namespace Sparta_rpg
                                 player.gold -= 500;
                                 Console.WriteLine("구매의 성공했습니다.");
                             }
-                            else  // 보유 중이라면
+                            else  // 보유 중
                             {
                                 Console.WriteLine("이미 보유한 아이템입니다.");
                             }
@@ -610,7 +618,7 @@ namespace Sparta_rpg
                                 player.gold -= 1000;
                                 Console.WriteLine("구매의 성공했습니다.");
                             }
-                            else  // 보유 중이라면
+                            else  // 보유 중
                             {
                                 Console.WriteLine("이미 보유한 아이템입니다.");
                             }
@@ -634,7 +642,7 @@ namespace Sparta_rpg
                                 player.gold -= 3000;
                                 Console.WriteLine("구매의 성공했습니다.");
                             }
-                            else  // 보유 중이라면
+                            else  // 보유 중
                             {
                                 Console.WriteLine("이미 보유한 아이템입니다.");
                             }
@@ -658,7 +666,7 @@ namespace Sparta_rpg
                                 player.gold -= 10000;
                                 Console.WriteLine("구매의 성공했습니다.");
                             }
-                            else  // 보유 중이라면
+                            else  // 보유 중
                             {
                                 Console.WriteLine("이미 보유한 아이템입니다.");
                             }
@@ -681,8 +689,10 @@ namespace Sparta_rpg
                 }
             }
         }
+
     }
 }
+
 
 
 

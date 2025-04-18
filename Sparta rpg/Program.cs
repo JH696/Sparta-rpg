@@ -31,7 +31,6 @@ namespace Sparta_rpg
         public int gold = 1500;
         public int level = 01;
 
-
         public string[] inventory = new string[8]  // 인벤토리 공간
         {
             "", "",  "",  "",  "",  "",  "",  ""
@@ -69,7 +68,6 @@ namespace Sparta_rpg
                 }
             }
         }
-
         public void ShowInventory()  // 인벤토리 표시
         {
             bool enterInventory = true;
@@ -318,7 +316,7 @@ namespace Sparta_rpg
                     case "7":  // 7번 아이템 장착
                         if (inventory[6] != "")
                         {
-                            if (inventory[6] == "불길한 검      |     ??     | 검이 나를 쳐다보는 것만 같다.")
+                            if (inventory[6] == "불길한 검      |     ??     | 이쪽을 쳐다보는 것만 같습니다.")
                             {
                                 inventory[6] = "[E] " + inventory[6];
 
